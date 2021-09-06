@@ -32,7 +32,7 @@ def song(client, message):
     for i in message.command[1:]:
         query += " " + str(i)
     print(query)
-    m = message.reply("🔎 ᴢᴀɪᴅ ꜰɪɴᴅɪɴɢ...")
+    m = message.reply("🔎 Dexter ꜰɪɴᴅɪɴɢ...")
     ydl_opts = {"format": "bestaudio[ext=m4a]"}
     try:
         results = YoutubeSearch(query, max_results=1).to_dict()
@@ -52,7 +52,7 @@ def song(client, message):
         m.edit("❌ song not found.\n\nplease give a valid song name.")
         print(str(e))
         return
-    m.edit("📥 ᴢᴀɪᴅ ᴅᴏᴡɴʟᴏᴀᴅɪɴɢ...")
+    m.edit("📥 Dexter ᴅᴏᴡɴʟᴏᴀᴅɪɴɢ...")
     try:
         with youtube_dl.YoutubeDL(ydl_opts) as ydl:
             info_dict = ydl.extract_info(link, download=False)
@@ -73,7 +73,7 @@ def song(client, message):
         )
         m.delete()
     except Exception as e:
-        m.edit("❌ error, contact @Zaid_Support To Fix")
+        m.edit("❌ error, contact @INFO_DEXTER To Fix")
         print(e)
 
     try:
