@@ -98,7 +98,7 @@ async def pause(_, message: Message):
     if (chat_id not in callsmusic.pytgcalls.active_calls) or (
         callsmusic.pytgcalls.active_calls[chat_id] == "paused"
     ):
-        await message.reply_text("❗ᴍ ᴋᴜᴄʜʜ ᴘʟᴀʏ ᴋᴀʀ ʀʜᴀ ʜᴜ?😒!")
+        await message.reply_text("❗NOTHING IS PLAYING BETICHOD!")
     else:
         callsmusic.pytgcalls.pause_stream(chat_id)
         await message.reply_text("▶️ ᴡᴛꜰ ᴘᴀᴜꜱᴇᴅ 😌!")
@@ -112,7 +112,7 @@ async def resume(_, message: Message):
     if (chat_id not in callsmusic.pytgcalls.active_calls) or (
         callsmusic.pytgcalls.active_calls[chat_id] == "playing"
     ):
-        await message.reply_text("❗ᴋᴜᴄʜʜ ᴘᴀᴜꜱᴇᴅ ᴍ ᴛʜᴀ?")
+        await message.reply_text("❗NOTHING IS PAUSED?")
     else:
         callsmusic.pytgcalls.resume_stream(chat_id)
         await message.reply_text("⏸ ᴏᴍᴋ ʀᴇꜱᴜᴍᴇᴅ!")
@@ -124,7 +124,7 @@ async def resume(_, message: Message):
 async def stop(_, message: Message):
     chat_id = get_chat_id(message.chat)
     if chat_id not in callsmusic.pytgcalls.active_calls:
-        await message.reply_text("❗ ʜᴇʜᴇ ᴍ ᴋᴜᴄʜʜ ᴘʟᴀʏ ʜɪ ɴ ᴋᴀʀ ʀʜᴀ😉!")
+        await message.reply_text("❗ NOTHING IS PLAYING!")
     else:
         try:
             queues.clear(chat_id)
@@ -132,7 +132,7 @@ async def stop(_, message: Message):
             pass
 
         callsmusic.pytgcalls.leave_group_call(chat_id)
-        await message.reply_text("⏹ ᴇɴᴅᴇᴅ ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴢᴀɪᴅ!")
+        await message.reply_text("⏹ ᴇɴᴅᴇᴅ ᴘᴏᴡᴇʀᴇᴅ ʙʏ DEXTER!")
 
 
 @Client.on_message(command("skip") & other_filters)
@@ -172,7 +172,7 @@ async def authenticate(client, message):
         new_admins = admins[message.chat.id]
         new_admins.append(message.reply_to_message.from_user.id)
         admins[message.chat.id] = new_admins
-        await message.reply("🟢 ᴏᴋᴀʏ ɴᴏᴡ ꜱᴏɴ ᴀᴜᴛʜᴏʀɪᴢᴇᴅ.\n\nᴊᴀᴀ ᴍᴏᴊ ᴋᴀʀ, ʟɪᴋᴇ ᴀᴅᴍɪɴ ᴄᴍᴅꜱ 😁.")
+        await message.reply("🟢 ᴏᴋᴀʏ ɴᴏᴡ ꜱᴏɴ ᴀᴜᴛʜᴏʀɪᴢᴇᴅ.\n\nOK DONE😁.")
     else:
         await message.reply("✅ ᴏᴋᴀʏ ꜱᴏɴ ɪꜱ ɴᴏᴡ ᴀᴜᴛʜᴏʀɪᴢᴇᴅ!")
 
@@ -190,7 +190,7 @@ async def deautenticate(client, message):
         admins[message.chat.id] = new_admins
         await message.reply("🔴 ᴡᴛꜰ ᴅᴇᴀᴜᴛʜᴏʀɪᴢᴇᴅ ꜱᴜᴄᴄᴇꜱꜱ.\n\nʜᴇʜᴇ ɴᴏᴡ ᴛʜɪꜱ ɴɪʙʙᴀ ᴄᴀɴᴛ ᴜꜱᴇ ᴍɪɴᴇ ꜰᴇᴀᴛᴜʀᴇꜱ.")
     else:
-        await message.reply("✅ ʜᴀʜᴀ ᴀᴀ ɢʏᴀ ᴊᴀᴍᴇᴇɴ ᴘᴇ!")
+        await message.reply("✅ k done!")
 
 
 # this is a anti cmd feature
